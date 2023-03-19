@@ -22,31 +22,54 @@ const Contest_item = (props) => {
           />
         </ListItemAvatar>
         <ListItemText
-          primary="TypeDB Forces 2023 (Div. 1 + Div. 2, Rated, Prizes!)"
+          primary={props.title}
           secondary={
             <React.Fragment>
+              <div className="upper">
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="span"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  {props.today_flag === "Yes" ? "Today" : `${props.day}`}
+                </Typography>
+                {props.status === "CODING" ? (
+                  <div className="status">
+                    <span className="dash">-</span> Contest status:
+                    <span style={{ color: "red" }}>Live</span>
+                  </div>
+                ) : (
+                  <div className="status">
+                    <span className="dash">-</span> Contest status:
+                    <span style={{ color: "green" }}> Register</span>
+                  </div>
+                )}
+              <br />
+              </div>
               <Typography
                 sx={{ display: "inline" }}
                 component="span"
                 variant="body2"
                 color="text.primary"
               >
-                Today
+                Timings: {props.start_time}-{props.end_time}
               </Typography>
-              {" — Contest status: "}
             </React.Fragment>
           }
         />
         <div className="contest_section_buttons">
-          <Button variant="contained" sx={{ backgroundColor: "#fd646f" }}>
+          <Button
+            className="link__button"
+            variant="contained"
+            sx={{ backgroundColor: "#fd646f" }}
+            href={props.url}
+          >
             Contest Link
           </Button>
         </div>
       </ListItem>
-      {props.flag?
-        <Divider variant="inset" component="li" />:
-        <span></span>
-      }
+      {props.flag ? <Divider variant="inset" component="li" /> : <span></span>}
     </Container>
   );
 }
