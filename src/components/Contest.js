@@ -53,7 +53,7 @@ const Contest = (props) => {
               <ContestItem
                 flag={true}
                 title={element.name}
-                key={element.url}
+                key={element.name}
                 url={element.url}
                 today_flag={element.in_24_hours}
                 day={day}
