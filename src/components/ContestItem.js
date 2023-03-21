@@ -1,8 +1,15 @@
-import {Button, Divider, ListItem, ListItemAvatar, ListItemText, Typography} from '@mui/material'
-import { Container } from '@mui/system'
-import React from 'react'
+import {
+  Button,
+  Divider,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Typography
+} from "@mui/material";
+import { Container } from "@mui/system";
+import React from "react";
 
-const Contest_item = (props) => { 
+const Contest_item = (props) => {
   return (
     <Container>
       <ListItem
@@ -28,7 +35,7 @@ const Contest_item = (props) => {
               <div className="upper">
                 <Typography
                   sx={{ display: "inline" }}
-                  component="span"
+                  component="div"
                   variant="body2"
                   color="text.primary"
                 >
@@ -45,11 +52,11 @@ const Contest_item = (props) => {
                     <span style={{ color: "green" }}> Register</span>
                   </div>
                 )}
-              <br />
+                <br />
               </div>
               <Typography
                 sx={{ display: "inline" }}
-                component="span"
+                component="div"
                 variant="body2"
                 color="text.primary"
               >
@@ -72,6 +79,6 @@ const Contest_item = (props) => {
       {props.flag ? <Divider variant="inset" component="li" /> : <span></span>}
     </Container>
   );
-}
+};
 
-export default Contest_item
+export default Contest_item;

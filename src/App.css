@@ -256,3 +256,9 @@ margin-bottom: 2rem;
   font-size: 1rem;
   font-weight: 800;
 }
+
+.menu__icons
+{
+  font-size: 1.5rem;
+  margin-right: .7rem;
+}

@@ -4,10 +4,10 @@ import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip
 import { Logout, PersonAdd, Settings } from '@mui/icons-material';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Codeforces = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
     if (prevOpen.current === true && open === false) {
@@ -36,16 +36,20 @@ const fetchData = async ()=>
       setarray(data);
     });
 }
+const Navigate = useNavigate();
+const home = ()=>
+{
+Navigate('/')
+}
 useEffect(() => {
   fetchData();
   
 }, [])
-
   return (
-    <div>
+    <div className='background__section'>
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
-          <i className="uil uil-estate home__button"></i>
+          <i className="uil uil-estate home__button" onClick={home}></i>
         </div>
         <div className="sub_navbar_heading">
           <h1 className="section__title">CodeForces</h1>
@@ -116,24 +120,9 @@ useEffect(() => {
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
               <MenuItem onClick={handleClose_account}>
-                <Avatar /> Profile
-              </MenuItem>
-              <MenuItem onClick={handleClose_account}>
-                <Avatar /> My account
+                <i class="uil uil-user-circle menu__icons"></i> User
               </MenuItem>
               <Divider />
-              <MenuItem onClick={handleClose_account}>
-                <ListItemIcon>
-                  <PersonAdd fontSize="small" />
-                </ListItemIcon>
-                Add another account
-              </MenuItem>
-              <MenuItem onClick={handleClose_account}>
-                <ListItemIcon>
-                  <Settings fontSize="small" />
-                </ListItemIcon>
-                Settings
-              </MenuItem>
               <MenuItem onClick={handleClose_account}>
                 <ListItemIcon>
                   <Logout fontSize="small" />
@@ -144,7 +133,7 @@ useEffect(() => {
           </React.Fragment>
         </div>
       </div>
-      <Contest data={array} fetchData={fetchData}/>
+      <Contest data={array} fetchData={fetchData} />
     </div>
   );
 }

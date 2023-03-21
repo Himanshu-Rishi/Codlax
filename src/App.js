@@ -8,6 +8,7 @@ import Searchuser from './components/Searchuser'
 import About from './components/About'
 import Kickstart from './components/Kickstart'
 import "./App.css";
+import Login from './components/Login'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Route exact path='/searchuser' element={<Searchuser />}  />
       <Route exact path='/about' element={<About />}  />
       <Route exact path='/kickstart' element={<Kickstart />}  />
+      <Route exact path='/login' element={<Login />}  />
     </Routes>
     </BrowserRouter>
   )
