@@ -1,5 +1,6 @@
 import * as React from "react";
 import "../style/search_user.css";
+import { useFormik } from "formik";
 import {
   Box,
   Divider,
@@ -10,10 +11,10 @@ import {
   Tooltip,
 } from "@mui/material";
 import { Logout} from "@mui/icons-material";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserItem from "./UserItem";
 import User from "./User";
+import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 const Searchuser = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -22,7 +23,6 @@ const Searchuser = () => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
-
     prevOpen.current = open;
   }, [open]);
 
@@ -34,16 +34,27 @@ const Searchuser = () => {
   const handleClose_account = () => {
     setAnchorEl(null);
   };
-  const handlesubmit = (e)=>
-  {
-    e.preventdefault();
-  }
   const Navigate = useNavigate();
+  const [user, setuser] = useState()
+  const formik = useFormik({
+    initialValues: {
+      user: "",
+    },
+    validateOnBlur: false,
+    validateOnChange: false,
+    onSubmit: async (values) => {
+      setuser(values.user);
+    toast.success("Click on Profile Link!");
+    },
+  });
   const home = () => {
     Navigate("/");
   };
   return (
     <div className="background__section">
+      <div>
+        <Toaster />
+      </div>
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
           <i className="uil uil-estate home__button" onClick={home}></i>
@@ -129,11 +140,20 @@ const Searchuser = () => {
           </React.Fragment>
         </div>
       </div>
-      <form action="onSubmit" className="form_section">
-        <input type="text" name="user" id="name_of_user" className="input__user"  placeholder="Enter user's name"/>
-        <button type="submit" className="input__submit" onClick={handlesubmit}>Search</button>
+      <form onSubmit={formik.handleSubmit} className="form_section">
+        <input
+          type="text"
+          name="user"
+          className="input__user"
+          placeholder="Enter user's name"
+          onChange={formik.handleChange}
+          value={formik.values.user}
+        />
+        <button type="submit" className="input__submit">
+          Search
+        </button>
       </form>
-      <User name={'himanshurishi'}/>
+      <User name={user} />
     </div>
   );
 };

@@ -24,9 +24,9 @@
 .about-img:before{
     position: absolute;
     content: '';
-    left: 25px;
-    top: 25px;
-    border: 9px solid rgba(255, 255, 255, 0.5);
+    left: 20px;
+    top: 20px;
+    border: 9px solid rgba(208, 208, 208, 0.5);
     width: 20rem;
     height: 30rem;
 }
@@ -64,6 +64,3 @@
     align-items: center;
 }
 
-body {
-    background-color: #EDEDED !important;
-}

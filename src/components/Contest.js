@@ -1,8 +1,8 @@
-import {List} from '@mui/material'
-import React from 'react'
-import ContestItem from './ContestItem'
+import { List } from "@mui/material";
+import React from "react";
+import ContestItem from "./ContestItem";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Spinner from './Spinner';
+import Spinner from "./Spinner";
 
 const Contest = (props) => {
   const data = props.data;
@@ -51,7 +51,7 @@ const Contest = (props) => {
               <ContestItem
                 flag={true}
                 title={element.name}
-                key={element.name}
+                key={element.url}
                 url={element.url}
                 today_flag={element.in_24_hours}
                 day={day}
@@ -65,6 +65,6 @@ const Contest = (props) => {
       </List>
     </div>
   );
-}
+};
 
-export default Contest
+export default Contest;

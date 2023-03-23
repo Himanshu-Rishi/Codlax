@@ -3,8 +3,6 @@ import {
   Divider,
   ListItem,
   ListItemAvatar,
-  ListItemText,
-  Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
@@ -17,62 +15,26 @@ const UserItem = (props) => {
         sx={{
           height: "15vh",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-between",
           alignItems: "center",
         }}
       >
         <ListItemAvatar>
           <img
             alt="Add Reminder"
-            src="/Images/calendar.png"
+            src="/Images/user.png"
             style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
           />
         </ListItemAvatar>
-        <ListItemText
-          primary={props.title}
-          secondary={
-            <React.Fragment>
-              <div className="upper">
-                <Typography
-                  sx={{ display: "inline" }}
-                  component="div"
-                  variant="body2"
-                  color="text.primary"
-                >
-                  {props.today_flag === "Yes" ? "Today" : `${props.day}`}
-                </Typography>
-                {props.status === "CODING" ? (
-                  <div className="status">
-                    <span className="dash">-</span> Contest status:
-                    <span style={{ color: "red" }}>Live</span>
-                  </div>
-                ) : (
-                  <div className="status">
-                    <span className="dash">-</span> Contest status:
-                    <span style={{ color: "green" }}> Register</span>
-                  </div>
-                )}
-                <br />
-              </div>
-              <Typography
-                sx={{ display: "inline" }}
-                component="div"
-                variant="body2"
-                color="text.primary"
-              >
-                Timings: {props.start_time}-{props.end_time}
-              </Typography>
-            </React.Fragment>
-          }
-        />
+        <h1 className="site_heading">{props.title}</h1>
         <div className="contest_section_buttons">
           <Button
             className="link__button"
             variant="contained"
-            sx={{ backgroundColor: "#fd646f" }}
+            sx={{ backgroundColor: "#606f79" }}
             href={props.url}
           >
-            Contest Link
+            Profile Link
           </Button>
         </div>
       </ListItem>

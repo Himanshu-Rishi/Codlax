@@ -100,6 +100,7 @@ img {
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
+  margin-top: 0.5rem;
 }
 
 .section__subtitle {
@@ -236,10 +237,6 @@ margin-bottom: 2rem;
   width: 6rem;
 }
 
-i{
-  cursor: pointer;
-}
-
 .spinner__div
 {
   text-align: center;
@@ -267,23 +264,21 @@ i{
   margin-right: .7rem;
 }
 
-.home_profile_section
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
-  background-color: black;
-}
-
-.user_item
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .site_heading
 {
-  color: rgb(86, 86, 86);
+  font-size: 2rem;
+  color: rgb(102, 102, 102);
+  margin: 0 1rem;
+  font-weight: 500;
+}
+
+.contest_container_user
+{
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  min-width: 500px;
+  margin: 0 auto;
 }
