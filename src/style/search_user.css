@@ -1,0 +1,34 @@
+.input__user
+{
+    width: 25rem;
+  height: var(--placeholder_height);
+  margin-bottom: var(--mb-3);
+  font-size: var(--placeholder_font_size);
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  box-shadow: 0.05em 0.05em .05em rgba(126, 126, 126, 0.3);
+}
+
+.input__submit
+{
+    margin-left: 1.5rem;
+    width: 6rem;
+  height: var(--placeholder_height);
+  margin-bottom: var(--mb-3);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+  background-color: #4b7a7dbd;
+  box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.form_section
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,10 +1,10 @@
-import {List} from '@mui/material'
-import React from 'react'
-import ContestItem from './ContestItem'
+import { List } from "@mui/material";
+import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Spinner from './Spinner';
+import Spinner from "./Spinner";
+import UserItem from "./UserItem";
 
-const Contest = (props) => {
+const User = (props) => {
   const data = props.data;
   return (
     <div className="contest_container glass">
@@ -48,7 +48,7 @@ const Contest = (props) => {
             });
 
             return (
-              <ContestItem
+              <UserItem
                 flag={true}
                 title={element.name}
                 key={element.name}
@@ -65,6 +65,6 @@ const Contest = (props) => {
       </List>
     </div>
   );
-}
+};
 
-export default Contest
+export default User;
