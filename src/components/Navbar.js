@@ -144,6 +144,8 @@ const Navbar = () => {
                 </IconButton>
               </Tooltip>
             </Box>
+            <div className='home_profile_section'>
+                <Login />
             <Menu
               anchorEl={anchorEl}
               id="account-menu"
@@ -181,8 +183,7 @@ const Navbar = () => {
             >
               <MenuItem onClick={handleClose_account}>
                 <i className="uil uil-user-circle menu__icons"></i>
-                <Login />
-                {/* <Link to="/login"><User></Link> */}
+                <Link to="/login">User</Link>
               </MenuItem>
               <Divider />
               <MenuItem onClick={handleClose_account}>
@@ -200,6 +201,8 @@ const Navbar = () => {
                 Logout
               </MenuItem>
             </Menu>
+
+            </div>
           </React.Fragment>
         </div>
       </div>

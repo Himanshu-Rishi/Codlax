@@ -236,6 +236,10 @@ margin-bottom: 2rem;
   width: 6rem;
 }
 
+i{
+  cursor: pointer;
+}
+
 .spinner__div
 {
   text-align: center;
@@ -261,4 +265,13 @@ margin-bottom: 2rem;
 {
   font-size: 1.5rem;
   margin-right: .7rem;
+}
+
+.home_profile_section
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  background-color: black;
 }
