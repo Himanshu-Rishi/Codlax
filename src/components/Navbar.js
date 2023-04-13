@@ -183,45 +183,7 @@ const Navbar = () => {
   //   document.getElementById("content").innerText = output;
   // }
 
-  function addManualEvent() {
-    var event = {
-      kind: "calendar#event",
-      summary: "Event 2",
-      location: "Masai School, Bangalore",
-      description: "Paty time",
-      start: {
-        dateTime: "2023-03-18T01:05:00.000Z",
-        timeZone: "UTC",
-      },
-      end: {
-        dateTime: "2023-03-18T01:35:00.000Z",
-        timeZone: "UTC",
-      },
-      recurrence: ["RRULE:FREQ=DAILY;COUNT=1"],
-      attendees: [
-        { email: "techmovieadd@gmail.com", responseStatus: "needsAction" },
-      ],
-      reminders: {
-        useDefault: true,
-      },
-      guestsCanSeeOtherGuests: true,
-    };
-
-    var request = gapi.client.calendar.events.insert({
-      calendarId: "primary",
-      resource: event,
-      sendUpdates: "all",
-    });
-    request.execute(
-      (event) => {
-        console.log(event);
-        window.open(event.htmlLink);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
+  
 
     return (
       <div className="navbar_container">

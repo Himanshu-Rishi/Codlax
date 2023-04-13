@@ -1,10 +1,16 @@
-import * as React from 'react';
-import Contest from './Contest';
-import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from '@mui/material';
-import { Logout, PersonAdd, Settings } from '@mui/icons-material';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import * as React from "react";
+import Contest from "./Contest";
+import {
+  Box,
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+  Tooltip,
+} from "@mui/material";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Codeforces = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -21,32 +27,29 @@ const Codeforces = () => {
   const open_account = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-  }
+  };
   const handleClose_account = () => {
     setAnchorEl(null);
-  }
-// fetching api
-const [array, setarray] = useState([])
-const fetchData = async ()=>
-{
-  fetch("https://kontests.net/api/v1/codeforces")
-    .then((response) => response.json())
-    .then((data) => 
-    {
-      setarray(data);
-    });
-}
-const Navigate = useNavigate();
-const home = ()=>
-{
-Navigate('/')
-}
-useEffect(() => {
-  fetchData();
-  
-}, [])
+  };
+  // fetching api
+  const [array, setarray] = useState([]);
+  const fetchData = async () => {
+    fetch("https://kontests.net/api/v1/codeforces")
+      .then((response) => response.json())
+      .then((data) => {
+        setarray(data);
+      });
+  };
+  const Navigate = useNavigate();
+  const home = () => {
+    Navigate("/");
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+ 
   return (
-    <div className='background__section'>
+    <div className="background__section">
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
           <i className="uil uil-estate home__button" onClick={home}></i>
@@ -120,22 +123,21 @@ useEffect(() => {
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
               <MenuItem onClick={handleClose_account}>
-                <i class="uil uil-user-circle menu__icons"></i> User
+                <i className="uil uil-github menu__icons"></i>
+                Github
               </MenuItem>
               <Divider />
               <MenuItem onClick={handleClose_account}>
-                <ListItemIcon>
-                  <Logout fontSize="small" />
-                </ListItemIcon>
-                Logout
+                <i className="uil uil-user-nurse menu__icons"></i> About
+                Developer
               </MenuItem>
             </Menu>
           </React.Fragment>
         </div>
       </div>
-      <Contest data={array} fetchData={fetchData} />
+      <Contest data={array} fetchData={fetchData}/>
     </div>
   );
-}
+};
 
-export default Codeforces
+export default Codeforces;

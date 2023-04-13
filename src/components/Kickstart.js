@@ -124,14 +124,13 @@ const Kickstart = () => {
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
               <MenuItem onClick={handleClose_account}>
-                <i class="uil uil-user-circle menu__icons"></i> User
+                <i className="uil uil-github menu__icons"></i>
+                Github
               </MenuItem>
               <Divider />
               <MenuItem onClick={handleClose_account}>
-                <ListItemIcon>
-                  <Logout fontSize="small" />
-                </ListItemIcon>
-                Logout
+                <i className="uil uil-user-nurse menu__icons"></i> About
+                Developer
               </MenuItem>
             </Menu>
           </React.Fragment>

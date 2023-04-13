@@ -8,8 +8,10 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-
+import { useContext } from "react";
+import ReminderContext from "../context/ReminderContext";
 const Contest_item = (props) => {
+  const handleClick = useContext(ReminderContext)
   return (
     <Container>
       <ListItem
@@ -22,6 +24,7 @@ const Contest_item = (props) => {
         }}
       >
         <ListItemAvatar>
+          <button onClick={handleClick.addManualEvent}></button>
           <img
             alt="Add Reminder"
             src="/Images/calendar.png"
