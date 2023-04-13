@@ -282,3 +282,13 @@ margin-bottom: 2rem;
   min-width: 500px;
   margin: 0 auto;
 }
+
+.button_to_text
+{
+  border: none;
+  background-color: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  margin-right: .7rem;
+  display: inline-block;
+}

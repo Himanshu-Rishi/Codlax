@@ -21,7 +21,7 @@ const App = () => {
       <Route exact path='/searchuser' element={<Searchuser />}  />
       <Route exact path='/about' element={<About />}  />
       <Route exact path='/kickstart' element={<Kickstart />}  />
-      <Route exact path='/login' element={<Login />}  />
+      {/* <Route exact path='/login' element={<Login />}  /> */}
     </Routes>
     </BrowserRouter>
   )
