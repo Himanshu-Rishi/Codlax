@@ -48,18 +48,25 @@ const Reminderstate = (props) => {
       });
     }
   }
+  const details = {
+    "title": "",
+    "site_name": "",
+    "start_time": "",
+    "end_time": "",
+    "url": ""
+  }
 const addManualEvent = () => {
-  var event = {
+    var event = {
     kind: "calendar#event",
-    summary: "Event 2",
-    location: "Masai School, Bangalore",
-    description: "Paty time",
+    summary: "Contest Reminder",
+    location: details.site_name,
+    description: details.title,
     start: {
-      dateTime: "2023-03-18T01:05:00.000Z",
+      dateTime: details.start_time,
       timeZone: "UTC",
     },
     end: {
-      dateTime: "2023-03-18T01:35:00.000Z",
+      dateTime: details.end_time,
       timeZone: "UTC",
     },
     recurrence: ["RRULE:FREQ=DAILY;COUNT=1"],
@@ -88,7 +95,7 @@ const addManualEvent = () => {
   );
 }
   return (
-    <ReminderContext.Provider value={{addManualEvent}}>
+    <ReminderContext.Provider value={{addManualEvent, details}}>
       {props.children}
     </ReminderContext.Provider>
   );

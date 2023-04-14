@@ -58,6 +58,9 @@ const Contest = (props) => {
                 end_time={second.slice(11)}
                 start_time={first.slice(11)}
                 status={element.status}
+                raw_start_time={element.start_time}
+                raw_end_time={element.end_time}
+                site_details={props.site_details}
               />
             );
           })}

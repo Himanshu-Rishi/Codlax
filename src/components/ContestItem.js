@@ -4,6 +4,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
@@ -11,7 +12,16 @@ import React from "react";
 import { useContext } from "react";
 import ReminderContext from "../context/ReminderContext";
 const Contest_item = (props) => {
-  const handleClick = useContext(ReminderContext)
+  const handler = useContext(ReminderContext)
+  const handleClick = ()=>
+  {
+    handler.details.title = props.title;
+    handler.details.start_time = props.raw_start_time;
+    handler.details.end_time = props.raw_end_time;
+    handler.details.url = props.url;
+    handler.details.site_details = props.site_details;
+    handler.addManualEvent();
+  }
   return (
     <Container>
       <ListItem
@@ -24,12 +34,16 @@ const Contest_item = (props) => {
         }}
       >
         <ListItemAvatar>
-          <button onClick={handleClick.addManualEvent}></button>
-          <img
-            alt="Add Reminder"
-            src="/Images/calendar.png"
-            style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
-          />
+          <Tooltip title="Add Reminder">
+          <button className="button_to_text" onClick={handleClick}>
+            {" "}
+            <img
+              alt="Add Reminder"
+              src="/Images/calendar.png"
+              style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
+              />
+          </button>
+              </Tooltip>
         </ListItemAvatar>
         <ListItemText
           primary={props.title}

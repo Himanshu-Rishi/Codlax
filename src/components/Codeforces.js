@@ -47,7 +47,6 @@ const Codeforces = () => {
   useEffect(() => {
     fetchData();
   }, []);
- 
   return (
     <div className="background__section">
       <div className="sub_navbar">
@@ -135,7 +134,7 @@ const Codeforces = () => {
           </React.Fragment>
         </div>
       </div>
-      <Contest data={array} fetchData={fetchData}/>
+      <Contest data={array} fetchData={fetchData} site_details={"Codeforces"}/>
     </div>
   );
 };

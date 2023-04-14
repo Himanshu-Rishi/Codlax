@@ -221,6 +221,10 @@ margin-top: var(--header-height);
     color: black;
     margin-bottom: 1.5rem;
 }
+.home__button:hover
+{
+  cursor: pointer;
+}
 
 .link__button:hover
 {
