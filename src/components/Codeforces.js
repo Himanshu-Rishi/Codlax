@@ -8,6 +8,7 @@ import {
   MenuItem,
   Tooltip,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -51,7 +52,11 @@ const Codeforces = () => {
     <div className="background__section">
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
-          <i className="uil uil-estate home__button" onClick={home}></i>
+          <HomeIcon
+            fontSize="large"
+            className="home__button"
+            onClick={home}
+          ></HomeIcon>
         </div>
         <div className="sub_navbar_heading">
           <h1 className="section__title">CodeForces</h1>
@@ -121,20 +126,24 @@ const Codeforces = () => {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem onClick={handleClose_account}>
-                <i className="uil uil-github menu__icons"></i>
-                Github
-              </MenuItem>
+              <a href="https://github.com/Himanshu-Rishi">
+                <MenuItem onClick={handleClose_account}>
+                  <i className="uil uil-github menu__icons"></i>
+                  Github
+                </MenuItem>
+              </a>
               <Divider />
-              <MenuItem onClick={handleClose_account}>
-                <i className="uil uil-user-nurse menu__icons"></i> About
-                Developer
-              </MenuItem>
+              <a href="https://rishiportfolio.vercel.app">
+                <MenuItem onClick={handleClose_account}>
+                  <i className="uil uil-user-nurse menu__icons"></i> About
+                  Developer
+                </MenuItem>
+              </a>
             </Menu>
           </React.Fragment>
         </div>
       </div>
-      <Contest data={array} fetchData={fetchData} site_details={"Codeforces"}/>
+      <Contest data={array} fetchData={fetchData} site_details={"Codeforces"} />
     </div>
   );
 };

@@ -1,21 +1,25 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import Logout from '@mui/icons-material/Logout';
-import { Menu } from '@mui/material';
-import { useEffect } from 'react';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Grow from "@mui/material/Grow";
+import Paper from "@mui/material/Paper";
+import Popper from "@mui/material/Popper";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import Logout from "@mui/icons-material/Logout";
+import { Menu } from "@mui/material";
+import { useEffect } from "react";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonIcon from "@mui/icons-material/Person";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Toaster, toast } from "react-hot-toast";
 
 const Navbar = () => {
   const gapi = window.gapi;
@@ -51,52 +55,49 @@ const Navbar = () => {
     gisLoaded();
   });
 
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
 
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
 
-    const handleClose = (event) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-
-        setOpen(false);
-    };
-
-    function handleListKeyDown(event) {
-        if (event.key === 'Tab') {
-            event.preventDefault();
-            setOpen(false);
-        } else if (event.key === 'Escape') {
-            setOpen(false);
-        }
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
     }
 
-    const prevOpen = React.useRef(open);
-    React.useEffect(() => {
-        if (prevOpen.current === true && open === false) {
-            anchorRef.current.focus();
-        }
+    setOpen(false);
+  };
 
-        prevOpen.current = open;
-    }, [open]);
+  function handleListKeyDown(event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setOpen(false);
+    } else if (event.key === "Escape") {
+      setOpen(false);
+    }
+  }
 
-    // account menu functions
+  const prevOpen = React.useRef(open);
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open_account = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose_account = () => {
-        setAnchorEl(null);
-    };
-    
+    prevOpen.current = open;
+  }, [open]);
 
+  // account menu functions
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open_account = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose_account = () => {
+    setAnchorEl(null);
+  };
 
   async function initializeGapiClient() {
     await gapi.client.init({
@@ -114,14 +115,13 @@ const Navbar = () => {
     }
   }
 
-  
-
   //Enables user interaction after all libraries are loaded.
 
   function handleAuthClick() {
     tokenClient.callback = async (resp) => {
       if (resp.error) {
         throw resp;
+        toast.error("Login Failed..!")
       }
       // await listUpcomingEvents();
       const { access_token, expires_in } = gapi.client.getToken();
@@ -148,6 +148,7 @@ const Navbar = () => {
       gapi.client.setToken("");
       localStorage.clear();
     }
+    toast.success("Logout Successfully");
   }
 
   // async function listUpcomingEvents() {
@@ -183,9 +184,9 @@ const Navbar = () => {
   //   document.getElementById("content").innerText = output;
   // }
 
-  
-
-    return (
+  return (
+    <>
+    <Toaster position="top-center" reverseOrder="false" />
       <div className="navbar_container">
         <div>
           <Button
@@ -303,7 +304,9 @@ const Navbar = () => {
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
                 <MenuItem onClick={handleClose_account}>
-                  <i className="uil uil-user-circle menu__icons"></i>
+                  <ListItemIcon>
+                    <AccountCircleIcon fontSize="medium" />
+                  </ListItemIcon>
                   <button
                     className="button_to_text"
                     disabled={accessToken && expiresIn}
@@ -313,17 +316,25 @@ const Navbar = () => {
                   </button>
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleClose_account}>
-                  <i className="uil uil-user-nurse menu__icons"></i> About
-                  Developer
-                </MenuItem>
-                <MenuItem onClick={handleClose_account}>
-                  <i className="uil uil-github menu__icons"></i>
-                  Github
-                </MenuItem>
+                <a href="https://rishiportfolio.vercel.app">
+                  <MenuItem onClick={handleClose_account}>
+                    <ListItemIcon>
+                      <PersonIcon fontSize="medium" />
+                    </ListItemIcon>
+                    About Developer
+                  </MenuItem>
+                </a>
+                <a href="https://github.com/Himanshu-Rishi">
+                  <MenuItem onClick={handleClose_account}>
+                    <ListItemIcon>
+                      <GitHubIcon fontSize="medium" />
+                    </ListItemIcon>
+                      Github
+                  </MenuItem>
+                </a>
                 <MenuItem onClick={handleClose_account}>
                   <ListItemIcon>
-                    <Logout fontSize="small" />
+                    <Logout fontSize="medium" />
                   </ListItemIcon>
                   <button
                     className="button_to_text"
@@ -338,7 +349,8 @@ const Navbar = () => {
           </React.Fragment>
         </div>
       </div>
-    );
-}
+    </>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -10,6 +10,7 @@ import {
   MenuItem,
   Tooltip,
 } from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
 import { Logout} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import User from "./User";
@@ -57,7 +58,11 @@ const Searchuser = () => {
       </div>
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
-          <i className="uil uil-estate home__button" onClick={home}></i>
+          <HomeIcon
+            fontSize="large"
+            className="home__button"
+            onClick={home}
+          ></HomeIcon>
         </div>
         <div className="sub_navbar_heading">
           <h1 className="section__title">Search User</h1>
@@ -126,16 +131,19 @@ const Searchuser = () => {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem onClick={handleClose_account}>
-                <i class="uil uil-user-circle menu__icons"></i> User
-              </MenuItem>
+              <a href="https://github.com/Himanshu-Rishi">
+                <MenuItem onClick={handleClose_account}>
+                  <i className="uil uil-github menu__icons"></i>
+                  Github
+                </MenuItem>
+              </a>
               <Divider />
-              <MenuItem onClick={handleClose_account}>
-                <ListItemIcon>
-                  <Logout fontSize="small" />
-                </ListItemIcon>
-                Logout
-              </MenuItem>
+              <a href="https://rishiportfolio.vercel.app">
+                <MenuItem onClick={handleClose_account}>
+                  <i className="uil uil-user-nurse menu__icons"></i> About
+                  Developer
+                </MenuItem>
+              </a>
             </Menu>
           </React.Fragment>
         </div>
