@@ -8,6 +8,7 @@
 
 
 > A website which can display the details of contest and you can easily add reminder to your google calander. It has a modern and minimialistic design with a user friendly interface. You can enjoy features on platforms leetcode, codechef, codeforces, kickstart.
+</div>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
