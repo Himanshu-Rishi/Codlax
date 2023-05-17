@@ -13,7 +13,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[screenshot](https://res.cloudinary.com/dbymhpzhq/image/upload/v1684343980/Screenshot_2023-05-17_at_10.49.28_PM_h1bxso.png)
+![screenshot](https://res.cloudinary.com/dbymhpzhq/image/upload/v1684343980/Screenshot_2023-05-17_at_10.49.28_PM_h1bxso.png)
 
 There are many situations in which you forget about the timming of contest but with use of this application you can set a reminder with all neccesary details of the contest and also a direct link of particular contest -- Freely forgot about the timming of contest.
 
