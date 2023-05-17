@@ -13,18 +13,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[screenshot](https://res.cloudinary.com/dbymhpzhq/image/upload/v1684343980/Screenshot_2023-05-17_at_10.49.28_PM_h1bxso.png)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+There are many situations in which you forget about the timming of contest but with use of this application you can set a reminder with all neccesary details of the contest and also a direct link of particular contest -- Freely forgot about the timming of contest.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Features:
+* Add reminder 30 minutes before the contest.
+* Direct link to contest.
+* You can get future contest details.:smile:
 
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
 
-Use the `BLANK_README.md` to get started.
+<!-- Use the `BLANK_README.md` to get started. -->
+
 <!-- Tech Stack -->
 # Tech Stack
 - Google Calander Sdk
@@ -34,7 +35,7 @@ Use the `BLANK_README.md` to get started.
 <!-- Built With -->
 ### Built With
 
-- [![React][React.js]][React-url]
+- React
 
 
 <!-- Installation -->
@@ -42,28 +43,31 @@ Use the `BLANK_README.md` to get started.
 npm install to install all dependencies.
 Visit Google Cloud conosle to get your client Id and api key for login process.
 You does not need any api key for the contest fetching api.
-<br />
+
+<!-- Testing -->
 # For Test Users
 You can test website by logining with the particular id:
+<br>
 email: testcodlax@gmail.com
+<br>
 password: codlax.123
 <br>
 If you want to enjoy the features of google calander then you have to use the above gmail becuase the website is now available for some limited users.
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!-- ## Usage -->
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<!-- Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 
 <!-- To Do -->
 # To Do
 
 <li>
-
+    Make responsive
 </li>
 
 
@@ -85,7 +89,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Himanshu Rishi - [@your_website](https://rishiportfolio.vercel.app/) - himanshurishi5449@gmail.com
+Himanshu Rishi - [@Portfolio Website](https://rishiportfolio.vercel.app/) - himanshurishi5449@gmail.com
 
 Project Link: [https://github.com/Himanshu-Rishi/Codlax](https://github.com/Himanshu-Rishi/Codlax)
 
