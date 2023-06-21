@@ -20,8 +20,10 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Toaster, toast } from "react-hot-toast";
+import ReminderContext from "../context/ReminderContext";
 
 const Navbar = () => {
+  const handler = React.useContext(ReminderContext);
   const gapi = window.gapi;
   const google = window.google;
 
@@ -117,11 +119,12 @@ const Navbar = () => {
 
   //Enables user interaction after all libraries are loaded.
 
-  function handleAuthClick() {
+  async function handleAuthClick() {
     tokenClient.callback = async (resp) => {
       if (resp.error) {
-        throw resp;
         toast.error("Login Failed..!");
+        handler.isLogin = false;
+        throw resp;
       }
       // await listUpcomingEvents();
       const { access_token, expires_in } = gapi.client.getToken();
@@ -132,7 +135,8 @@ const Navbar = () => {
     if (!(accessToken && expiresIn)) {
       // Prompt the user to select a Google Account and ask for consent to share their data
       // when establishing a new session.
-      tokenClient.requestAccessToken({ prompt: "consent" });
+      await tokenClient.requestAccessToken({ prompt: "consent" });
+      handler.isLogin = true;
     } else {
       // Skip display of account chooser and consent dialog for an existing session.
       tokenClient.requestAccessToken({ prompt: "" });
@@ -258,11 +262,6 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
                 >
-                  {/* <img
-                    alt="My account"
-                    style={{ width: "32px", height: "32px"}}
-                    src="/Images/account.svg"
-                  /> */}
                   <ListItemIcon>
                     <AccountCircleIcon
                       fontSize="large"

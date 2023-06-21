@@ -11,16 +11,24 @@ import { Container } from "@mui/system";
 import React from "react";
 import { useContext } from "react";
 import ReminderContext from "../context/ReminderContext";
+import { toast } from "react-hot-toast";
 const Contest_item = (props) => {
   const handler = useContext(ReminderContext)
   const handleClick = ()=>
   {
-    handler.details.title = props.title;
-    handler.details.start_time = props.raw_start_time;
-    handler.details.end_time = props.raw_end_time;
-    handler.details.url = props.url;
-    handler.details.site_details = props.site_details;
-    handler.addManualEvent();
+    if(handler.isLogin === false)
+    {
+      toast.error("Go to Homepage and Login !")
+    }
+    else
+    {
+      handler.details.title = props.title;
+      handler.details.start_time = props.raw_start_time;
+      handler.details.end_time = props.raw_end_time;
+      handler.details.url = props.url;
+      handler.details.site_details = props.site_details;
+      handler.addManualEvent();
+    }
   }
   return (
     <Container>

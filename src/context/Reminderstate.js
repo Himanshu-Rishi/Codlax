@@ -3,6 +3,7 @@ import ReminderContext from "./ReminderContext";
 import { useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 const Reminderstate = (props) => {
+  const isLogin = false;
   const gapi = window.gapi;
   const google = window.google;
 
@@ -98,7 +99,7 @@ const addManualEvent = () => {
   );
 }
   return (
-    <ReminderContext.Provider value={{ addManualEvent, details }}>
+    <ReminderContext.Provider value={{ addManualEvent, details, isLogin }}>
       <Toaster position="bottom-center" reverseOrder={false} />
       {props.children}
     </ReminderContext.Provider>
