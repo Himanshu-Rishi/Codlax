@@ -19,7 +19,7 @@ import { useEffect } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Toaster, toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import ReminderContext from "../context/ReminderContext";
 
 const Navbar = () => {

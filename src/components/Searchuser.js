@@ -5,19 +5,17 @@ import {
   Box,
   Divider,
   IconButton,
-  ListItemIcon,
   Menu,
   MenuItem,
   Tooltip,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import { Logout} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import User from "./User";
 import { useState } from "react";
-import { Toaster, toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 const Searchuser = () => {
-  const [open, setOpen] = React.useState(false);
+  const open = false;
   const anchorRef = React.useRef(null);
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
@@ -36,7 +34,7 @@ const Searchuser = () => {
     setAnchorEl(null);
   };
   const Navigate = useNavigate();
-  const [user, setuser] = useState()
+  const [user, setuser] = useState();
   const formik = useFormik({
     initialValues: {
       user: "",
@@ -45,7 +43,7 @@ const Searchuser = () => {
     validateOnChange: false,
     onSubmit: async (values) => {
       setuser(values.user);
-    toast.success("Click on Profile Link!");
+      toast.success("Click on Profile Link!");
     },
   });
   const home = () => {
@@ -54,7 +52,6 @@ const Searchuser = () => {
   return (
     <div className="background__section">
       <div>
-        <Toaster />
       </div>
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">

@@ -13,7 +13,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const Codeforces = () => {
-  const [open, setOpen] = React.useState(false);
+    const open = false;
   const anchorRef = React.useRef(null);
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
