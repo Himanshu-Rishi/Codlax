@@ -121,7 +121,7 @@ const Navbar = () => {
     tokenClient.callback = async (resp) => {
       if (resp.error) {
         throw resp;
-        toast.error("Login Failed..!")
+        toast.error("Login Failed..!");
       }
       // await listUpcomingEvents();
       const { access_token, expires_in } = gapi.client.getToken();
@@ -186,7 +186,6 @@ const Navbar = () => {
 
   return (
     <>
-    <Toaster position="top-center" reverseOrder="false" />
       <div className="navbar_container">
         <div>
           <Button
@@ -225,15 +224,15 @@ const Navbar = () => {
                       aria-labelledby="composition-button"
                       onKeyDown={handleListKeyDown}
                     >
-                      <MenuItem onClick={handleClose}>
-                        <Link to="/kickstart">Kickstart</Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to="/searchuser">Search User</Link>
-                      </MenuItem>
-                      <MenuItem onClick={handleClose}>
-                        <Link to="/about">About</Link>
-                      </MenuItem>
+                      <Link to="/kickstart">
+                        <MenuItem onClick={handleClose}>Kickstart</MenuItem>
+                      </Link>
+                      <Link to="/searchuser">
+                        <MenuItem onClick={handleClose}>Search User</MenuItem>
+                      </Link>
+                      <Link to="/about">
+                        <MenuItem onClick={handleClose}>About</MenuItem>
+                      </Link>
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>
@@ -259,11 +258,17 @@ const Navbar = () => {
                   aria-haspopup="true"
                   aria-expanded={open ? "true" : undefined}
                 >
-                  <img
+                  {/* <img
                     alt="My account"
-                    style={{ width: "32px", height: "32px" }}
-                    src="/Images/profile.png"
-                  />
+                    style={{ width: "32px", height: "32px"}}
+                    src="/Images/account.svg"
+                  /> */}
+                  <ListItemIcon>
+                    <AccountCircleIcon
+                      fontSize="large"
+                      sx={{ color: "white" }}
+                    />
+                  </ListItemIcon>
                 </IconButton>
               </Tooltip>
             </Box>
@@ -303,18 +308,18 @@ const Navbar = () => {
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
-                <MenuItem onClick={handleClose_account}>
-                  <ListItemIcon>
-                    <AccountCircleIcon fontSize="medium" />
-                  </ListItemIcon>
-                  <button
-                    className="button_to_text"
-                    disabled={accessToken && expiresIn}
-                    onClick={handleAuthClick}
-                  >
+                <button
+                  className="button_to_text"
+                  disabled={accessToken && expiresIn}
+                  onClick={handleAuthClick}
+                >
+                  <MenuItem onClick={handleClose_account}>
+                    <ListItemIcon>
+                      <AccountCircleIcon fontSize="medium" />
+                    </ListItemIcon>
                     Login
-                  </button>
-                </MenuItem>
+                  </MenuItem>
+                </button>
                 <Divider />
                 <a href="https://rishiportfolio.vercel.app">
                   <MenuItem onClick={handleClose_account}>
@@ -329,21 +334,21 @@ const Navbar = () => {
                     <ListItemIcon>
                       <GitHubIcon fontSize="medium" />
                     </ListItemIcon>
-                      Github
+                    Github
                   </MenuItem>
                 </a>
-                <MenuItem onClick={handleClose_account}>
-                  <ListItemIcon>
-                    <Logout fontSize="medium" />
-                  </ListItemIcon>
-                  <button
-                    className="button_to_text"
-                    disabled={!accessToken && !expiresIn}
-                    onClick={handleSignoutClick}
-                  >
+                <button
+                  className="button_to_text"
+                  disabled={!accessToken && !expiresIn}
+                  onClick={handleSignoutClick}
+                >
+                  <MenuItem onClick={handleClose_account}>
+                    <ListItemIcon>
+                      <Logout fontSize="medium" />
+                    </ListItemIcon>
                     Logout
-                  </button>
-                </MenuItem>
+                  </MenuItem>
+                </button>
               </Menu>
             </div>
           </React.Fragment>
