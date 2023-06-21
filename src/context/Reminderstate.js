@@ -1,6 +1,7 @@
 import React from "react";
 import ReminderContext from "./ReminderContext";
 import { useEffect } from "react";
+import { Toaster, toast } from "react-hot-toast";
 const Reminderstate = (props) => {
   const gapi = window.gapi;
   const google = window.google;
@@ -86,16 +87,19 @@ const addManualEvent = () => {
   });
   request.execute(
     (event) => {
-      console.log(event);
-      window.open(event.htmlLink);
+
+      toast.success("Event added to calendar!");
+      console.log(event)
+      console.log(details)
     },
     (error) => {
-      console.error(error);
+      toast.error("Please add event manually!");
     }
   );
 }
   return (
-    <ReminderContext.Provider value={{addManualEvent, details}}>
+    <ReminderContext.Provider value={{ addManualEvent, details }}>
+      <Toaster position="bottom-center" reverseOrder={false} />
       {props.children}
     </ReminderContext.Provider>
   );
