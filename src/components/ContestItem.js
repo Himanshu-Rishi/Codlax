@@ -13,15 +13,11 @@ import { useContext } from "react";
 import ReminderContext from "../context/ReminderContext";
 import { toast } from "react-hot-toast";
 const Contest_item = (props) => {
-  const handler = useContext(ReminderContext)
-  const handleClick = ()=>
-  {
-    if(handler.isLogin === false)
-    {
-      toast.error("Go to Homepage and Login !")
-    }
-    else
-    {
+  const handler = useContext(ReminderContext);
+  const handleClick = () => {
+    if (handler.isLogin === false) {
+      toast.error("Go to Homepage and Login !");
+    } else {
       handler.details.title = props.title;
       handler.details.start_time = props.raw_start_time;
       handler.details.end_time = props.raw_end_time;
@@ -29,9 +25,9 @@ const Contest_item = (props) => {
       handler.details.site_details = props.site_details;
       handler.addManualEvent();
     }
-  }
+  };
   return (
-    <Container>
+    <Container className="contest__box">
       <ListItem
         alignItems="flex-start"
         sx={{
@@ -40,18 +36,19 @@ const Contest_item = (props) => {
           justifyContent: "center",
           alignItems: "center",
         }}
+        className="context__box"
       >
         <ListItemAvatar>
           <Tooltip title="Add Reminder">
-          <button className="button_to_text" onClick={handleClick}>
-            {" "}
-            <img
-              alt="Add Reminder"
-              src="/Images/calendar.png"
-              style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
+            <button className="button_to_text" onClick={handleClick}>
+              {" "}
+              <img
+                alt="Add Reminder"
+                src="/Images/calendar.png"
+                style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
               />
-          </button>
-              </Tooltip>
+            </button>
+          </Tooltip>
         </ListItemAvatar>
         <ListItemText
           primary={props.title}

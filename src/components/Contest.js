@@ -12,7 +12,7 @@ const Contest = (props) => {
         sx={{
           width: "100%",
           height: "60vh",
-          maxWidth: "50vw",
+          // maxWidth: "50vw",
           bgcolor: "background.paper",
           borderRadius: "10px",
         }}

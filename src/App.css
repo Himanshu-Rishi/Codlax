@@ -1,66 +1,64 @@
 /*==================== GOOGLE FONTS ====================*/
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /*==================== VARIABLES CSS ====================*/
 :root {
-    --header-height: 3rem;
-    /*========== Colors ==========*/
-    /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
-    /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
-    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 45%);
-    --text-color-light: hsl(var(--hue-color), 8%, 65%);
-    --input-color: hsl(var(--hue-color), 70%, 96%);
-    --body-color: #4c7a7d;
-    --container-color: #fff;
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-    /*========== Font and typography ==========*/
-    --body-font: 'Poppins', sans-serif;
-    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-    --big-font-size: 2rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-    /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
-    /*========== Margenes Bottom ==========*/
-    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
+  --header-height: 3rem;
+  /*========== Colors ==========*/
+  /* Change favorite color */
+  --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: #4c7a7d;
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
 }
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
-    :root {
-        --big-font-size: 3rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
+  :root {
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
 }
-/*========== Variables Dark theme ==========*/
-/*========== Button Dark/Light ==========*/
 /*==================== BASE ====================*/
 * {
   box-sizing: border-box;
@@ -68,7 +66,7 @@
   margin: 0;
 }
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
   height: max-content;
 }
 body {
@@ -77,11 +75,15 @@ body {
   font-size: var(--normal-font-size);
   color: var(--text-color);
 }
-html, body {
-height: 100vh;
-width: 100vw;
+html,
+body {
+  height: 100vh;
+  width: 100vw;
 }
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
@@ -112,7 +114,7 @@ img {
   font-size: var(--small-font-size);
 }
 
-.section__title, 
+.section__title,
 .section__subtitle {
   text-align: center;
 }
@@ -138,9 +140,7 @@ img {
   background-color: var(--body-color);
 }
 
-
-.home_container_main
-{
+.home_container_main {
   height: 94vh;
   display: flex;
   justify-content: center;
@@ -148,8 +148,7 @@ img {
   background-color: var(--body-color);
 }
 
-.navbar_container
-{
+.navbar_container {
   height: 6vh;
   display: flex;
   justify-content: space-between;
@@ -157,51 +156,45 @@ img {
   background-color: var(--body-color);
 }
 
-.contest_container
-{
+.contest_container {
   height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   width: max-content;
-  min-width: 700px;
   margin: 0 auto;
   overflow: hidden;
   overflow-y: scroll;
 }
 
-.sub_navbar
-{
+.sub_navbar {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0 1rem;
 }
 
-.account_box
-{
+.account_box {
   margin-right: 2vw;
   margin-top: 1vw;
 }
 
-.glass
-{
-background: rgba(255, 255, 255, 0.2);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.58);
+.glass {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.58);
 }
 
-.contest_section_buttons
-{
+.contest_section_buttons {
   margin-left: 1.5rem;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
-.sub_navbar_heading
-{
-margin-top: var(--header-height);
+.sub_navbar_heading {
+  margin-top: var(--header-height);
   width: 80vw;
   display: flex;
   flex-direction: column;
@@ -211,77 +204,65 @@ margin-top: var(--header-height);
   margin-bottom: 5rem;
 }
 
-.sub_navbar_arrow_container
-{
+.sub_navbar_arrow_container {
   /* width: 10vw; */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 1rem;
 }
 
-.home__button
-{
-    font-size: 3rem;
-    color: rgb(44, 44, 44);
-    margin-bottom: 1.5rem;
+.home__button {
+  font-size: 3rem;
+  color: rgb(44, 44, 44);
+  margin-bottom: 1.5rem;
 }
-.home__button:hover
-{
+.home__button:hover {
   cursor: pointer;
 }
 
-.link__button:hover
-{
+.link__button:hover {
   background-color: #ffac5c;
 }
 
-.account_box_second
-{
-margin-bottom: 2rem;
+.account_box_second {
+  margin-bottom: 2rem;
 }
 
-.loader
-{
+.loader {
   width: 6rem;
 }
 
-.spinner__div
-{
+.spinner__div {
   text-align: center;
 }
 
-.upper
-{
+.upper {
   display: flex;
   align-items: center;
 }
 
-.status
-{
-  margin-left: .5rem;
+.status {
+  margin-left: 0.5rem;
 }
-.dash
-{
+.dash {
   font-size: 1rem;
   font-weight: 800;
 }
 
-.menu__icons
-{
+.menu__icons {
   font-size: 1.5rem;
-  margin-right: .7rem;
+  margin-right: 0.7rem;
 }
 
-.site_heading
-{
+.site_heading {
   font-size: 2rem;
   color: rgb(102, 102, 102);
   margin: 0 1rem;
   font-weight: 500;
 }
 
-.contest_container_user
-{
+.contest_container_user {
   height: max-content;
   display: flex;
   justify-content: center;
@@ -291,15 +272,57 @@ margin-bottom: 2rem;
   margin: 0 auto;
 }
 
-.button_to_text
-{
+.button_to_text {
   border: none;
   font-size: 17px;
   cursor: pointer;
-  margin-right: .7rem;
+  margin-right: 0.7rem;
   display: inline-block;
   width: 100%;
   text-align: left;
   background-color: #ffffff;
+}
 
+/* media screens */
+
+@media screen and (max-width: 968px) {
+  .contest_container {
+    min-width: 700px;
+    margin: auto;
+  }
+  .contest__box
+  {
+    min-width: max-content;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contest_container {
+    min-width: 500px;
+    margin: auto;
+  }
+  .contest__box
+  {
+    min-width: max-content;
+  }
+}
+@media screen and (max-width: 678px) {
+  .contest_container {
+    max-width: 450px;
+    margin: auto;
+  }
+  .contest__box
+  {
+    min-width: max-content;
+  }
+}
+@media screen and (max-width: 568px) {
+  .contest_container {
+    width: 400px;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 468px) {
+  .contest_container {
+    max-width: 150px !important;
+  }
 }
