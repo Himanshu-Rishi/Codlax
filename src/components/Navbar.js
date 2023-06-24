@@ -10,7 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
@@ -18,12 +17,9 @@ import { Menu } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { toast } from "react-hot-toast";
-import ReminderContext from "../context/ReminderContext";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const handler = React.useContext(ReminderContext);
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
   const { user, isAuthenticated, isLoading } = useAuth0();

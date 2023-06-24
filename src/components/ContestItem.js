@@ -9,21 +9,25 @@ import {
 } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
-import { useContext } from "react";
-import ReminderContext from "../context/ReminderContext";
+import { googleCalendarEventUrl } from "google-calendar-url";
 import { toast } from "react-hot-toast";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from "react-router-dom";
 const Contest_item = (props) => {
-  const handler = useContext(ReminderContext);
+  const history = useNavigate();
+  const { isAuthenticated} = useAuth0();
   const handleClick = () => {
-    if (handler.isLogin === false) {
-      toast.error("Go to Homepage and Login !");
+    if (!isAuthenticated) {
+      toast.error("Go to Homepage and Login First..!");
     } else {
-      handler.details.title = props.title;
-      handler.details.start_time = props.raw_start_time;
-      handler.details.end_time = props.raw_end_time;
-      handler.details.url = props.url;
-      handler.details.site_details = props.site_details;
-      handler.addManualEvent();
+      const url = googleCalendarEventUrl({
+        start: "20201212T100000Z",
+        end: "20201212T110000Z",
+        title: props.title,
+        details: `This contest will be held on ${props.site_details}. Contest Link for the contest is ${props.url}`,
+        location: props.site_details,
+      });
+      history(url, {replace: false});
     }
   };
   return (

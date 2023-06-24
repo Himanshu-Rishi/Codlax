@@ -8,11 +8,9 @@ import Searchuser from "./components/Searchuser";
 import About from "./components/About";
 import Kickstart from "./components/Kickstart";
 import "./App.css";
-import Reminderstate from "./context/Reminderstate";
 const App = () => {
   return (
     <>
-      <Reminderstate>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -24,7 +22,6 @@ const App = () => {
             <Route exact path="/kickstart" element={<Kickstart />} />
           </Routes>
         </BrowserRouter>
-      </Reminderstate>
     </>
   );
 };
