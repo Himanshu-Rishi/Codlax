@@ -326,3 +326,10 @@ img {
     max-width: 150px !important;
   }
 }
+
+.user__image
+{
+  width: 28px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
