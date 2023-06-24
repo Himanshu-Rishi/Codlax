@@ -283,6 +283,11 @@ img {
   background-color: #ffffff;
 }
 
+.mobile__contest_container
+{
+  display: none;
+}
+
 /* media screens */
 
 @media screen and (max-width: 968px) {
@@ -295,36 +300,37 @@ img {
     min-width: max-content;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
   .contest_container {
-    min-width: 500px;
+    max-width: 200px !important;
     margin: auto;
+    background-color: black;
+    display: none !important;
   }
-  .contest__box
+  .reminder__image
   {
-    min-width: max-content;
+    width: 7vw;
+    height: 7vw ;
+  }
+  .mobile__contest_container
+  {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
-@media screen and (max-width: 678px) {
-  .contest_container {
-    max-width: 450px;
-    margin: auto;
-  }
-  .contest__box
-  {
-    min-width: max-content;
-  }
-}
+
+
 @media screen and (max-width: 568px) {
-  .contest_container {
-    width: 400px;
-    margin: auto;
+  .mobile__contest_container
+  {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 468px) {
-  .contest_container {
-    max-width: 150px !important;
-  }
+  
 }
 
 .user__image

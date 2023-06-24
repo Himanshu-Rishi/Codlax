@@ -10,14 +10,13 @@ import {
 import { Container } from "@mui/system";
 import React from "react";
 import { googleCalendarEventUrl } from "google-calendar-url";
-import { toast } from "react-hot-toast";
+import {  toast } from "react-hot-toast";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router-dom";
 const Contest_item = (props, history) => {
-  const navigate = useNavigate();
   const { isAuthenticated} = useAuth0();
   const handleClick = () => {
-    if (!isAuthenticated) {
+    console.log(isAuthenticated)
+    if (isAuthenticated === false) {
       toast.error("Go to Homepage and Login First..!");
     } else {
       let temp = props.raw_start_time.replace(/\-/g, "");
@@ -57,7 +56,8 @@ const Contest_item = (props, history) => {
               <img
                 alt="Add Reminder"
                 src="/Images/calendar.png"
-                style={{ width: "5vw", height: "8vh", marginRight: "2vh" }}
+                className="reminder__image"
+                style={{ minWidth: "5vw", height: "8vh", marginRight: "2vh" }}
               />
             </button>
           </Tooltip>

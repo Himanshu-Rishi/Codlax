@@ -13,6 +13,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 const Kickstart = () => {
   const open = false;
   const anchorRef = React.useRef(null);
@@ -51,6 +52,7 @@ const Kickstart = () => {
   }, []);
   return (
     <div className="background__section">
+      <Toaster reverseOrder={false} position="bottom-center" />
       <div className="sub_navbar">
         <div className="sub_navbar_arrow_container">
           <HomeIcon
