@@ -165,6 +165,7 @@ img {
   margin: 0 auto;
   overflow: hidden;
   overflow-y: scroll;
+  min-width: 500px;
 }
 
 .sub_navbar {
