@@ -38,80 +38,154 @@ const Contest_item = (props, history) => {
     }
   };
   return (
-    <Container className="contest__box">
-      <ListItem
-        alignItems="flex-start"
-        sx={{
-          height: "15vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        className="context__box"
-      >
-        <ListItemAvatar>
-          <Tooltip title="Add Reminder">
-            <button className="button_to_text" onClick={handleClick}>
-              {" "}
-              <img
-                alt="Add Reminder"
-                src="/Images/calendar.png"
-                className="reminder__image"
-                style={{ minWidth: "5vw", height: "8vh", marginRight: "2vh" }}
-              />
-            </button>
-          </Tooltip>
-        </ListItemAvatar>
-        <ListItemText
-          primary={props.title}
-          secondary={
-            <React.Fragment>
-              <div className="upper">
+    <>
+      <Container className="contest__box">
+        <ListItem
+          alignItems="flex-start"
+          sx={{
+            height: "15vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          className="context__box"
+        >
+          <ListItemAvatar>
+            <Tooltip title="Add Reminder">
+              <button className="button_to_text" onClick={handleClick}>
+                {" "}
+                <img
+                  alt="Add Reminder"
+                  src="/Images/calendar.png"
+                  className="reminder__image"
+                  style={{ minWidth: "5vw", height: "8vh", marginRight: "2vh" }}
+                />
+              </button>
+            </Tooltip>
+          </ListItemAvatar>
+          <ListItemText
+            primary={props.title}
+            secondary={
+              <React.Fragment>
+                <div className="upper">
+                  <Typography
+                    sx={{ display: "inline" }}
+                    component="div"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    {props.today_flag === "Yes" ? "Today" : `${props.day}`}
+                  </Typography>
+                  {props.status === "CODING" ? (
+                    <div className="status">
+                      <span className="dash">-</span> Contest status:
+                      <span style={{ color: "red" }}>Live</span>
+                    </div>
+                  ) : (
+                    <div className="status">
+                      <span className="dash">-</span> Contest status:
+                      <span style={{ color: "green" }}> Register</span>
+                    </div>
+                  )}
+                  <br />
+                </div>
                 <Typography
                   sx={{ display: "inline" }}
                   component="div"
                   variant="body2"
                   color="text.primary"
                 >
-                  {props.today_flag === "Yes" ? "Today" : `${props.day}`}
+                  Timings: {props.start_time}-{props.end_time}
                 </Typography>
-                {props.status === "CODING" ? (
-                  <div className="status">
-                    <span className="dash">-</span> Contest status:
-                    <span style={{ color: "red" }}>Live</span>
-                  </div>
-                ) : (
-                  <div className="status">
-                    <span className="dash">-</span> Contest status:
-                    <span style={{ color: "green" }}> Register</span>
-                  </div>
-                )}
-                <br />
-              </div>
-              <Typography
-                sx={{ display: "inline" }}
-                component="div"
-                variant="body2"
-                color="text.primary"
-              >
-                Timings: {props.start_time}-{props.end_time}
-              </Typography>
-            </React.Fragment>
-          }
-        />
-        <div className="contest_section_buttons">
-          <Button
-            className="link__button"
-            variant="contained"
-            sx={{ backgroundColor: "#fd646f" }}
-            href={props.url}
-          >
-            Contest Link
-          </Button>
-        </div>
-      </ListItem>
-      {props.flag ? <Divider variant="inset" component="li" /> : <span></span>}
-    </Container>
+              </React.Fragment>
+            }
+          />
+          <div className="contest_section_buttons">
+            <Button
+              className="link__button"
+              variant="contained"
+              sx={{ backgroundColor: "#fd646f" }}
+              href={props.url}
+            >
+              Contest Link
+            </Button>
+          </div>
+        </ListItem>
+        {props.flag ? (
+          <Divider variant="inset" component="li" />
+        ) : (
+          <span></span>
+        )}
+      </Container>
+
+      <Container className="mobile__contest__box">
+       
+            <Tooltip title="Add Reminder" className="mobile__reminder__image">
+              <button className="button_to_text" onClick={handleClick}>
+                {" "}
+                <img
+                  alt="Add Reminder"
+                  src="/Images/calendar.png"
+                  className="reminder__image"
+                  style={{ minWidth: "5vw", height: "8vh", marginRight: "2vh" }}
+                />
+              </button>
+            </Tooltip>
+          <ListItemText
+          className="mobile__text"
+            primary={props.title}
+            secondary={
+              <React.Fragment>
+                <div className="upper">
+                  <Typography
+                    sx={{ display: "inline"}}
+                    component="div"
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    {props.today_flag === "Yes" ? "Today" : `${props.day}`}
+                  </Typography>
+                  {props.status === "CODING" ? (
+                    <div className="status">
+                      <span className="dash">-</span> Contest status:
+                      <span style={{ color: "red" }}>Live</span>
+                    </div>
+                  ) : (
+                    <div className="status">
+                      <span className="dash">-</span> Contest status:
+                      <span style={{ color: "green" }}> Register</span>
+                    </div>
+                  )}
+                  <br />
+                </div>
+                <Typography
+                  sx={{ display: "inline" }}
+                  component="div"
+                  variant="body2"
+                  color="text.primary"
+                >
+                  Timings: {props.start_time}-{props.end_time}
+                </Typography>
+              </React.Fragment>
+            }
+          />
+          <div className="contest_section_buttons">
+            <Button
+              className="link__button"
+              variant="contained"
+              sx={{ backgroundColor: "#fd646f" }}
+              href={props.url}
+            >
+              Contest Link
+            </Button>
+          </div>
+        {props.flag ? (
+          <Divider variant="inset" component="li" className="mobile__divider" />
+        ) : (
+          <span></span>
+        )}
+      </Container>
+    </>
   );
 };
 

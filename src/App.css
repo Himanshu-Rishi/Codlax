@@ -288,6 +288,12 @@ img {
   display: none;
 }
 
+.mobile__contest__box
+{
+  display: none !important;
+}
+
+
 /* media screens */
 
 @media screen and (max-width: 968px) {
@@ -307,6 +313,9 @@ img {
     background-color: black;
     display: none !important;
   }
+  .contest__box{
+    display: none !important;
+  }
   .reminder__image
   {
     width: 7vw;
@@ -317,6 +326,36 @@ img {
     display: block;
     max-width: 500px;
     margin: 0 auto;
+  }
+  .button_to_text
+  {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contest_section_buttons
+  {
+    margin: 0 auto;
+  }
+
+  .mobile__text
+  {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile__contest__box
+  {
+    display: block !important;
+    display: flex   !important;
+    flex-direction: column  !important;
+    justify-content: center  !important;
+    align-content: center  !important;
+  }
+  .mobile__divider
+  {
+    margin: 0.5rem 0 !important;
+
   }
 }
 
@@ -330,7 +369,7 @@ img {
   }
 }
 @media screen and (max-width: 468px) {
-  
+
 }
 
 .user__image
