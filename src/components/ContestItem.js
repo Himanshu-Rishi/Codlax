@@ -13,21 +13,29 @@ import { googleCalendarEventUrl } from "google-calendar-url";
 import { toast } from "react-hot-toast";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
-const Contest_item = (props) => {
-  const history = useNavigate();
+const Contest_item = (props, history) => {
+  const navigate = useNavigate();
   const { isAuthenticated} = useAuth0();
   const handleClick = () => {
     if (!isAuthenticated) {
       toast.error("Go to Homepage and Login First..!");
     } else {
+      let temp = props.raw_start_time.replace(/\-/g, "");
+      temp = temp.replace(/\:/g, "");
+      temp = temp.replace(/\./g, "");
+      temp = temp.slice(0, 12);
+      let temp1 = props.raw_end_time.replace(/\-/g, "");
+      temp1 = temp1.replace(/\:/g, "");
+      temp1 = temp1.replace(/\./g, "");
+      temp1 = temp1.slice(0, 12);
       const url = googleCalendarEventUrl({
-        start: "20201212T100000Z",
-        end: "20201212T110000Z",
+        start: `${temp}000Z`,
+        end: `${temp1}000Z`,
         title: props.title,
-        details: `This contest will be held on ${props.site_details}. Contest Link for the contest is ${props.url}`,
+        details: `This contest will be held on ${props.site_details}. Contest Link for the contest is ${props.url}. The Contest will be held on ${props.day} and  Timings : ${props.start_time}-${props.end_time}`,
         location: props.site_details,
       });
-      history(url, {replace: false});
+      window.location.replace(url);
     }
   };
   return (

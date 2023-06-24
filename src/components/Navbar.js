@@ -22,7 +22,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
   const { loginWithRedirect } = useAuth0();
   const { logout } = useAuth0();
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated} = useAuth0();
 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
@@ -70,7 +70,6 @@ const Navbar = () => {
 
   return (
     <>
-      {!isLoading && (
         <div className="navbar_container">
           <div>
             <Button
@@ -256,7 +255,6 @@ const Navbar = () => {
             </React.Fragment>
           </div>
         </div>
-      )}
     </>
   );
 };
